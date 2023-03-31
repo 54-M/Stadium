@@ -47,7 +47,7 @@ map<string, user_info *> users_map; // store the users_map
 Stadium *stadium; // store the stadium
 
 void load_users() {
-  ifstream in("D:\\Projects\\FCI_Projects\\stadium\\src\\users.txt");
+  ifstream in("users.txt");
   if (in.fail()) return void(cout << "Failed to open users_map file\n");
   string u, p;
   while (in >> u >> p) {
@@ -58,14 +58,14 @@ void load_users() {
 }
 
 void save_users() {
-  ofstream out("D:\\Projects\\FCI_Projects\\stadium\\src\\users.txt");
+  ofstream out("users.txt");
   if (out.fail()) return void(cout << "Failed to open users file\n");
   for (auto it : users_map) out << it.first << " " << it.second->password << "\n";
   out.close();
 }
 
 void load_seats() {
-  ifstream in("D:\\Projects\\FCI_Projects\\stadium\\src\\seats.txt");
+  ifstream in("seats.txt");
   if (in.fail()) return void(cout << "Failed to open seats file\n");
   string u;
   int s;
@@ -101,7 +101,7 @@ void delete_seat(user_info *user) {
 }
 
 void save_seats() {
-  ofstream out("D:\\Projects\\FCI_Projects\\stadium\\src\\seats.txt");
+  ofstream out("seats.txt");
   if (out.fail()) return void(cout << "Failed to open seats.txt\n");
   for (auto it : users_map) for (int s : it.second->seats) out << it.first << " " << s << "\n";
   out.close();
