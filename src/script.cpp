@@ -222,5 +222,5 @@ int main() {
 	cin >> choice;
   }
   save_users(), save_seats(), delete stadium;
-  cout << "Have fun. Goodbye.\n";
+  cout<< "Have fun. Goodbye.\n";
 }
