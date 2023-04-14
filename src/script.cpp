@@ -2,7 +2,7 @@
 #include <unistd.h>
 #include "../includes/functions.hpp"
 using namespace std;
-
+     
 int main() {
 	users_directory = "../data_files/users.txt";
 	seats_directory = "../data_files/seats.txt";
