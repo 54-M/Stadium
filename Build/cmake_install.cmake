@@ -1,4 +1,4 @@
-# Install script for directory: D:/Projects/FCI_Projects/stadium
+# Install script for directory: D:/Projects/College/File/stadium
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/Projects/FCI_Projects/stadium/Build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/Projects/College/File/stadium/Build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
