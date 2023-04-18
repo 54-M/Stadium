@@ -1,3 +1,0 @@
-D:/Projects/College/File/stadium/Build/CMakeFiles/script.dir
-D:/Projects/College/File/stadium/Build/CMakeFiles/edit_cache.dir
-D:/Projects/College/File/stadium/Build/CMakeFiles/rebuild_cache.dir
