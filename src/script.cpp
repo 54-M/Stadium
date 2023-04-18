@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 #include <windows.h>
-
 #include "../includes/functions.hpp"
 using namespace std;
      
