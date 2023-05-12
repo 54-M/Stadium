@@ -1,8 +1,10 @@
 #include <bits/stdc++.h>
 #include <windows.h>
+
 #include "../includes/functions.hpp"
+
 using namespace std;
-     
+
 int main() {
   users_directory = "../data/users.txt";
   seats_directory = "../data/seats.txt";
