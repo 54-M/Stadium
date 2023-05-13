@@ -1,3 +1,6 @@
+import time
+
+
 users_directory = "py/data/users.txt"
 seats_directory = "py/data/seats.txt"
 
@@ -27,12 +30,12 @@ def loginUser():
             fields = line.split('\t')
             if fields[0] == username and fields[1].strip() == password:
                 print('Login successful!')
-                return username  # Return the logged-in username
+                return username
     print('Invalid username or password.')
     return None
 
 
-def writeSeatBooking(username):
+def writeSeat(username):
     if not username:
         print('Please log in to book a seat.')
         return
@@ -45,7 +48,7 @@ def writeSeatBooking(username):
             file.write(username + '\t' + seat_number + '\n')
 
 
-def readSeatBooking(username):
+def readSeat(username):
     if not username:
         print('Please log in to view seat bookings.')
         return
@@ -64,7 +67,7 @@ def readSeatBooking(username):
             print('No seat bookings found for this user.')
 
 
-def searchSeatBooking(username):
+def searchSeat(username):
     if not username:
         print('Please log in to search seat bookings.')
         return
@@ -79,7 +82,7 @@ def searchSeatBooking(username):
     print(f'Seat number {seat_number} is available.')
 
 
-def deleteSeatBooking(username):
+def deleteSeat(username):
     if not username:
         print('Please log in to delete a seat booking.')
         return
@@ -102,7 +105,7 @@ def deleteSeatBooking(username):
         print(f'Seat number {seat_number} not found or not booked by you.')
 
 
-def updateSeatBooking(username):
+def updateSeat(username):
     if not username:
         print('Please log in to update a seat booking.')
         return
@@ -130,41 +133,58 @@ def updateSeatBooking(username):
 
 
 def main():
+
+    
+
     username = None
 
     while True:
-        print('1. Register')
-        print('2. Login')
-        print('3. Book a seat')
-        print('4. View seat bookings')
-        print('5. Search seat booking')
-        print('6. Delete seat booking')
-        print('7. Update seat booking')
-        print('8. Exit')
+        while not username:
+            print('1. Register')
+            print('2. Login')
+            choice = input('Enter your choice: ')
 
-        choice = input('Enter your choice: ')
+            if choice == '1':
+                writeUser()
+            elif choice == '2':
+                username = loginUser()
+                if username:
+                    print('Login successful!')
+            else:
+                print('Invalid choice. Please try again.')
+            time.sleep(1)
 
-        if choice == '1':
-            writeUser()
-        elif choice == '2':
-            username = loginUser()
-            if username:
-                print('Login successful!')
-        elif choice == '3':
-            writeSeatBooking(username)
-        elif choice == '4':
-            readSeatBooking(username)
-        elif choice == '5':
-            searchSeatBooking(username)
-        elif choice == '6':
-            deleteSeatBooking(username)
-        elif choice == '7':
-            updateSeatBooking(username)
-        elif choice == '8':
-            print('Exiting the program.')
-            break
-        else:
-            print('Invalid choice. Please try again.')
+        while username:
+            print('1. Logout')
+            print('2. Book a seat')
+            print('3. View seat bookings')
+            print('4. Search seat booking')
+            print('5. Delete seat booking')
+            print('6. Update seat booking')
+            print('7. Exit')
+
+            choice = input('Enter your choice: ')
+
+            if choice == '1':
+                print('Loged out!')
+                username = None
+                break
+            elif choice == '2':
+                writeSeat(username)
+            elif choice == '3':
+                readSeat(username)
+            elif choice == '4':
+                searchSeat(username)
+            elif choice == '5':
+                deleteSeat(username)
+            elif choice == '6':
+                updateSeat(username)
+            elif choice == '7':
+                print('Exiting the program.')
+                return
+            else:
+                print('Invalid choice. Please try again.')
+            time.sleep(1)
 
 
 main()
