@@ -1,3 +1,5 @@
+import os
+
 users_directory = "py/data/users.txt"
 seats_directory = "py/data/seats.txt"
 
@@ -113,9 +115,18 @@ def searchSeat(username):
 # delete a seat
 def deleteSeat(username):
   try:
+    
     seat_number = input("Enter the seat number to delete: ")
+    
+    # with open("py/data/seats_temp.txt", "w") as temp:
+    #   with open(seats_directory, "r") as file:
+    #     for line in file:
+    #       field = line.split('\t')
+    #       if seat_number != field[1].strip():
+    #         temp.write(line)
+  
     with open(seats_directory, "r") as file:
-      lines = file.readlines()
+        lines = file.readlines()
     
     flag = False
     with open(seats_directory, "w") as file:
@@ -129,7 +140,11 @@ def deleteSeat(username):
       print(f"Seat number {seat_number} has been deleted.")
     else:
       print(f"Seat number {seat_number} not found or not booked by you.")
-  
+    
+    
+    
+    # os.remove(seats_directory)
+    # os.rename("py/data/seats_temp.txt", "py/data/seats.txt")
   except IOError as e:
     print(f"An error occurred while deleting the seat: {e}")
 

@@ -5,7 +5,7 @@ from functions import *
 
 
 def main():
-  logo()
+  # logo()
   username = None
   
   while True:
